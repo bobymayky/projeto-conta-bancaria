@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "tb_conta_bancaria", schema = "pagseguro")
+@Table(name = "tb_conta_bancaria", schema = "cadastro")
 public class ContaBancaria {
 
      @Id
