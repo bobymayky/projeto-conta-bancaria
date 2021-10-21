@@ -26,16 +26,40 @@ public class ContaBancariaServiceTest {
 	}
 	
 	@Test
-	public void incluirContaBancaria(){
+	public void executarMetodo() {
+		create();
+		//update();
+		//delete();
+		
+	}
+	
+	public void create(){
 		ContaBancariaVo contaBancariaVo = new ContaBancariaVo();
 		contaBancariaVo.setNome("Boby Mayky Ribeiro da Costa");
-		contaBancariaVo.setNumero(55533);
-		contaBancariaVo.setAgencia(2233);
+		contaBancariaVo.setAgencia(1299);
 		contaBancariaVo.setChequeEspecialLiberado(false);
 		contaBancariaVo.setSaldo(BigDecimal.valueOf(22.00));
 		contaBancariaVo.setChequeEspecial(BigDecimal.valueOf(100.00));
 		contaBancariaVo.setTaxa(BigDecimal.valueOf(22.99));
-		getContaBancariaService().incluirContaBancaria(contaBancariaVo);
+		getContaBancariaService().create(contaBancariaVo);
+	} 
+	
+
+	
+	public void update(){
+		ContaBancariaVo contaBancariaVo = new ContaBancariaVo();
+		contaBancariaVo.setId(Long.valueOf("36"));
+		contaBancariaVo.setNome("Boby Mayky Ribeiro");
+		contaBancariaVo.setChequeEspecialLiberado(false);
+		contaBancariaVo.setSaldo(BigDecimal.valueOf(22.00));
+		contaBancariaVo.setChequeEspecial(BigDecimal.valueOf(100.00));
+		contaBancariaVo.setTaxa(BigDecimal.valueOf(22.99));
+		getContaBancariaService().update(contaBancariaVo);
+	} 
+	
+
+	public void delete() {
+		getContaBancariaService().delete(Long.valueOf("37"));
 	}
 
 }

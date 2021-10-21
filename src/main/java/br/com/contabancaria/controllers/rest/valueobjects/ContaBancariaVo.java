@@ -4,9 +4,7 @@ import java.math.BigDecimal;
 
 public class ContaBancariaVo {
 	
-	
-	
-	 private Integer id;
+	 private Long id;
 	 private String nome;
 	 private Integer numero;
 	 private Integer agencia;
@@ -16,11 +14,11 @@ public class ContaBancariaVo {
 	 
 	 private BigDecimal taxa;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
