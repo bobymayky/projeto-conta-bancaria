@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "4fef407b-6d9c-4337-92dc-b3a97fa838a4",
+		"name": "Conta Bancária",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registrar Conta Bancária",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"agencia\": 1299,\r\n  \"chequeEspecial\": 500.00,\r\n  \"chequeEspecialLiberado\": false,\r\n  \"id\": 0,\r\n  \"nome\": \"Carlos Brito\",\r\n  \"numero\": 0,\r\n  \"saldo\": 200.00,\r\n  \"taxa\": 2.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/contabancaria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"contabancaria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Conta Bancária",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"agencia\": 1299,\r\n  \"chequeEspecial\": 500.00,\r\n  \"chequeEspecialLiberado\": false,\r\n  \"id\": 40,\r\n  \"nome\": \"Carlos Brito Santana\",\r\n  \"numero\": 0,\r\n  \"saldo\": 200.00,\r\n  \"taxa\": 2.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/contabancaria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"contabancaria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Conta Bancária por Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/contabancaria/40",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"contabancaria",
+						"40"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detalhe Conta Bancária",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/contabancaria/detalhe?numero=449302&agencia=1136",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"contabancaria",
+						"detalhe"
+					],
+					"query": [
+						{
+							"key": "numero",
+							"value": "449302"
+						},
+						{
+							"key": "agencia",
+							"value": "1136"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisar contas bancárias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/contabancaria/pesquisar?nome=Cleiton Schiodinni&agencia=1136&chequeEspecialLiberado=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"contabancaria",
+						"pesquisar"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Cleiton Schiodinni"
+						},
+						{
+							"key": "agencia",
+							"value": "1136"
+						},
+						{
+							"key": "chequeEspecialLiberado",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
