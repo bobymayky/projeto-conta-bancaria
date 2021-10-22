@@ -2,6 +2,7 @@ package br.com.contabancaria.controllers.rest.valueobjects;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -89,7 +90,8 @@ public class DetalheContaBancariaVo {
 		 if(saldo == null) {
 			 saldo = BigDecimal.valueOf(0.0);
 		 }
-		 NumberFormat nf = NumberFormat.getCurrencyInstance();  
+		 Locale meuLocal = new Locale( "pt", "BR" );
+		 NumberFormat nf = NumberFormat.getCurrencyInstance(meuLocal); 
 		 String saldoFormatado = nf.format (saldo);
 		 return saldoFormatado;
 	 }
@@ -105,7 +107,8 @@ public class DetalheContaBancariaVo {
 			 valorChequeEspecial =  valorChequeEspecial.add(valorAcrecimo);
 		 }
 		 
-		 NumberFormat nf = NumberFormat.getCurrencyInstance();  
+		 Locale meuLocal = new Locale( "pt", "BR" );
+		 NumberFormat nf = NumberFormat.getCurrencyInstance(meuLocal); 
 		 String chequeEspecialFormatado = nf.format (valorChequeEspecial);
 		 return chequeEspecialFormatado;
 	 }
