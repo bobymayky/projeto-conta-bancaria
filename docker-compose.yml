@@ -1,0 +1,51 @@
+version: '3.4'
+
+services:
+  db-conta-bancaria-app:
+    image: 'postgres:13.1-alpine'
+    container_name: db-conta-bancaria-app
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - .docker/dbdata:/var/lib/postgresql/data
+    networks:
+      - conta-bancaria-app-network
+  conta-bancaria-app:
+    image: 'conta-bancaria-app:latest'
+    build:
+      context: .
+    environment:
+      TZ: America/Cuiaba
+    ports:
+      - "8080:8080" 
+    container_name: conta-bancaria-app
+    depends_on:
+      - db-conta-bancaria-app
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db-conta-bancaria-app:5432/db_conta_bancaria
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    networks:
+      - conta-bancaria-app-network
+
+ 
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: conta-bancaria-app-pgadmin
+    tty: true
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@contabancariaapp.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - '9000:80'
+    depends_on:
+      - db-conta-bancaria-app
+    networks:
+      - conta-bancaria-app-network
+networks:
+    conta-bancaria-app-network:
+        driver: bridge
