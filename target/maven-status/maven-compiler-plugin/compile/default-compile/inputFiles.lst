@@ -1,6 +1,9 @@
+D:\desenvolvimento\projetos\java\workspacegithub\java\projeto-conta-bancaria\src\main\java\br\com\contabancaria\controllers\rest\valueobjects\DetalheContaBancariaVo.java
 D:\desenvolvimento\projetos\java\workspacegithub\java\projeto-conta-bancaria\src\main\java\br\com\contabancaria\converter\DozerConverter.java
 D:\desenvolvimento\projetos\java\workspacegithub\java\projeto-conta-bancaria\src\main\java\springboot\settings\persistence\DataSourceConfiguration.java
 D:\desenvolvimento\projetos\java\workspacegithub\java\projeto-conta-bancaria\src\main\java\springboot\ContaBancariaApiApplication.java
+D:\desenvolvimento\projetos\java\workspacegithub\java\projeto-conta-bancaria\src\main\java\br\com\contabancaria\controllers\rest\ContaBancariaRestController.java
+D:\desenvolvimento\projetos\java\workspacegithub\java\projeto-conta-bancaria\src\main\java\br\com\contabancaria\config\SwaggerConfig.java
 D:\desenvolvimento\projetos\java\workspacegithub\java\projeto-conta-bancaria\src\main\java\br\com\contabancaria\model\entities\ContaBancaria.java
 D:\desenvolvimento\projetos\java\workspacegithub\java\projeto-conta-bancaria\src\main\java\br\com\contabancaria\model\repositories\IContaBancariaJpaRepository.java
 D:\desenvolvimento\projetos\java\workspacegithub\java\projeto-conta-bancaria\src\main\java\br\com\contabancaria\controllers\rest\valueobjects\ContaBancariaVo.java

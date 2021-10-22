@@ -1,8 +1,14 @@
 package br.com.contabancaria.controllers.services;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import br.com.contabancaria.controllers.rest.valueobjects.ContaBancariaVo;
+import br.com.contabancaria.controllers.rest.valueobjects.DetalheContaBancariaVo;
 import br.com.contabancaria.converter.DozerConverter;
 import br.com.contabancaria.exception.MensagemAvisoUsuarioException;
 import br.com.contabancaria.exception.ResourceNotFoundException;
@@ -61,5 +67,33 @@ public class ContaBancariaService {
 		}
 		
 	}
+	
+	
+	public List<ContaBancariaVo> pesquisar( String nome, Integer agencia, boolean chequeEspecialLiberado ) {
+		List<ContaBancariaVo> retorno = new ArrayList<ContaBancariaVo>();
+		List<ContaBancaria> registros = contaBancariaJpaRepository.pesquisar(nome, agencia, chequeEspecialLiberado);
+	    if(registros != null ) {
+	    	for(ContaBancaria registro : registros) {
+	    		retorno.add(convertContaBancariaVo(registro));
+	    	}
+	    }
+		return retorno;
+	}
+	
+	
+	public DetalheContaBancariaVo buscarDetalhe( Integer agencia, Integer numero) {
+		DetalheContaBancariaVo retorno = new DetalheContaBancariaVo();
+		ContaBancaria registro = contaBancariaJpaRepository.buscarDetalhe(agencia, numero);
+	    if(registro != null ) {
+	    	retorno = new DetalheContaBancariaVo(registro.getNome(), registro.getAgencia(), registro.getNumero(), registro.getSaldo(), registro.isChequeEspecialLiberado(), registro.getChequeEspecial(), registro.getTaxa());
+	    }
+		return retorno;
+	}
+	
+	
+	private ContaBancariaVo convertContaBancariaVo(ContaBancaria entity) {
+		return DozerConverter.parseObject(entity, ContaBancariaVo.class);
+	}
+
 
 }
