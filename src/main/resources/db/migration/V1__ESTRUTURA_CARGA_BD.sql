@@ -1,4 +1,4 @@
-/*create database db2_conta_bancaria; */
+/*create database db_conta_bancaria; */
 
 create schema cadastro;
 

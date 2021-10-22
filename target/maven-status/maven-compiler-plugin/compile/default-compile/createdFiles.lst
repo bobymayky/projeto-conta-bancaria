@@ -1,0 +1,12 @@
+br\com\contabancaria\model\entities\ContaBancaria.class
+br\com\contabancaria\config\SwaggerConfig.class
+br\com\contabancaria\exception\MensagemAvisoUsuarioException.class
+br\com\contabancaria\controllers\services\ContaBancariaService.class
+br\com\contabancaria\model\repositories\IContaBancariaJpaRepository.class
+springboot\ContaBancariaApiApplication.class
+br\com\contabancaria\controllers\rest\ContaBancariaRestController.class
+br\com\contabancaria\controllers\rest\valueobjects\DetalheContaBancariaVo.class
+br\com\contabancaria\controllers\rest\valueobjects\ContaBancariaVo.class
+springboot\settings\persistence\DataSourceConfiguration.class
+br\com\contabancaria\converter\DozerConverter.class
+br\com\contabancaria\exception\ResourceNotFoundException.class
